@@ -1,0 +1,7 @@
+mode: set
+pointers_and_errors/wallet.go:13.40,16.2 1 1
+pointers_and_errors/wallet.go:18.33,20.2 1 1
+pointers_and_errors/wallet.go:26.31,28.2 1 0
+pointers_and_errors/wallet.go:30.46,31.24 1 1
+pointers_and_errors/wallet.go:31.24,33.3 1 1
+pointers_and_errors/wallet.go:34.2,35.12 2 1
