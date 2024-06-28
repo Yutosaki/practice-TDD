@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"reflect"
 	"testing"
+	"time"
 )
 func TestCountDown(t *testing.T){
 	t.Run("print 3 to Go!", func(t *testing.T){
@@ -30,3 +31,14 @@ func TestCountDown(t *testing.T){
 	})
 }
 
+func TestConfigurableSleeper(t *testing.T){
+	sleepTime := 5 * time.Second
+
+	SpyTime := &SpyTime{}
+	sleeper := ConfigurableSleeper{sleepTime, SpyTime.Sleep}
+	sleeper.Sleep()
+
+	if SpyTime.durationSlept != sleepTime {
+		t.Errorf("should have slept for %v but slept for %v", sleepTime, SpyTime.durationSlept)
+	}
+}
